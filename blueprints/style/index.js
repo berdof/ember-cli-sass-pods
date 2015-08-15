@@ -37,11 +37,11 @@ module.exports = {
 };
 
 function addScssToImportFile (name, options) {
-      var importFile = options.podsDir ? options.podsDir.replace(/(\\|\/)$/, '') : 'pods',
+      var importFile = 'jnet',//options.podsDir ? options.podsDir.replace(/(\\|\/)$/, '') : 'pods',
           filePath = path.join(options.root, 'app/styles'),
           importScssPath = path.join(filePath, importFile + '.scss'),
           podsDir = options.podsDir ? importFile + '/' : '',
-          newLine = '@import "app/' + podsDir + options.name + '/style";\n',
+          newLine = '@import "../' + podsDir + options.name + '/style";\n',
           source;
 
       if (!fs.existsSync(filePath)) {
